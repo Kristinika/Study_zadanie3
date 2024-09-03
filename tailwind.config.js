@@ -26,6 +26,7 @@ export default {
       'white' : '#FFFFFF',    
       'gray': '#1D1D1D',
       'blue': '#054FD7',
+      'darkblue': '#0B0590',
       'black': '#000000',
     },
     boxShadow: {

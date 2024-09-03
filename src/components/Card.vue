@@ -1,12 +1,15 @@
 <template>
-    <div class="bg-white bg-opacity-40 rounded-[40px] overflow-hidden font-raleway font-normal text-start 
-        shadow-lg shadow-for-card border-t-2 border-white border-opacity-10">
+    <div 
+      class="bg-white bg-opacity-40 rounded-[40px] overflow-hidden font-raleway font-normal text-start 
+        shadow-lg shadow-for-card border-t-2 border-white border-opacity-10 cursor-pointer"
+      @click="goToDetail"
+    >
       <img :src="image" alt="Card Image" class="w-full h-48 object-cover" />
       <div class="px-[36px] pt-[22px] pb-[33px]">
         <div class="flex justify-between text-blue text-[15px]">
             <div class="flex space-x-[18px]">
-                <div class="">{{ sort }}</div>
-                <div class="">{{ category }}</div>    
+                <div>{{ sort }}</div>
+                <div>{{ category }}</div>    
             </div>
             <div class="flex">
                 <div class="text-gray">{{ date }}</div>
@@ -24,16 +27,24 @@
 </template>
   
 <script setup>
-    import { defineProps } from 'vue';
-
-    const props = defineProps({
-        image: String,
-        sort: String,
-        category: String,
-        date: String,
-        title: String,
-        description: String,
-    });
+  import { defineProps } from 'vue';
+  import { useRouter } from 'vue-router';
+  
+  const props = defineProps({
+      id: Number,
+      image: String,
+      sort: String,
+      category: String,
+      date: String,
+      title: String,
+      description: String,
+  });
+  
+  const router = useRouter();
+  
+  const goToDetail = () => {
+      router.push({ name: 'Detail', params: { id: props.id } });
+  };
 </script>
   
 <style scoped>
