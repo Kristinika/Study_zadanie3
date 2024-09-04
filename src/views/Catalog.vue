@@ -1,7 +1,7 @@
 <template>
-    <div class="min-h-screen px-72 pt-[139px] mb-[77px]">
-        <h1 class="text-[48px] text-center text-blue font-roboto font-normal">БЛОГ</h1>
-        <div class="grid grid-cols-3 gap-[22px] pt-[68px] pb-[90px]">
+    <div class="bg-custom-bg bg-cover min-h-screen pt-[70px] md:pt-[139px] px-[30px] md:px-[50px] lg:px-[90px] xl:px-[180px] 2xl:px-[280px]">
+        <h1 class="text-[36px] md:text-[48px] text-center text-blue font-roboto font-normal">БЛОГ</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[22px] pt-[40px] md:pt-[68px] pb-[60px] md:pb-[90px]">
         <Card
             v-for="(card, index) in cards"
             :key="index"
@@ -14,7 +14,7 @@
             :description="card.description"
         />
         </div>
-        <div class="text-center text-base font-raleway font-bold">
+        <div class="text-center text-[15px] md:text-[16px] font-raleway font-bold pb-[50px] md:pb-[77px]">
             <Button
                 v-for="(button, index) in buttons"
                 :key="index"
