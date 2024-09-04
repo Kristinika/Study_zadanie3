@@ -150,7 +150,7 @@ import Card from '../components/Card.vue';
         title: 'Содержание',
     }
   ]
-
+  
   const cards = [
     {
         id: 3,
